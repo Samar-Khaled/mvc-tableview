@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cQB-jp-RmV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dreams List-->
+        <scene sceneID="4ne-tR-Xee">
+            <objects>
+                <tableViewController id="T7U-8h-Wf5" customClass="DreamsListTableViewController" customModule="Ghost_s_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VxU-F3-8St">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Enter your search text" id="z4a-kF-RzY">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DreamTableViewCell" rowHeight="100" id="4pq-Tg-tHe" customClass="DreamTableViewCell" customModule="Ghost_s_Dreams" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4pq-Tg-tHe" id="1wX-sH-Qp9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53k-II-5P3">
+                                            <rect key="frame" x="22" y="17" width="331" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxc-Wb-HDI">
+                                            <rect key="frame" x="24" y="44" width="327" height="39"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gxc-Wb-HDI" firstAttribute="top" secondItem="53k-II-5P3" secondAttribute="bottom" constant="6" id="5Ug-0x-C2c"/>
+                                        <constraint firstItem="53k-II-5P3" firstAttribute="leading" secondItem="1wX-sH-Qp9" secondAttribute="leadingMargin" constant="6" id="Fmt-Fw-cQ3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gxc-Wb-HDI" secondAttribute="trailing" constant="8" id="MtX-Sb-kxz"/>
+                                        <constraint firstItem="gxc-Wb-HDI" firstAttribute="leading" secondItem="1wX-sH-Qp9" secondAttribute="leadingMargin" constant="8" id="Xes-g8-6UT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="53k-II-5P3" secondAttribute="trailing" constant="6" id="b3P-Tc-Ucx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gxc-Wb-HDI" secondAttribute="bottom" constant="6" id="elV-6l-0my"/>
+                                        <constraint firstItem="53k-II-5P3" firstAttribute="top" secondItem="1wX-sH-Qp9" secondAttribute="topMargin" constant="6" id="kq0-QD-SVm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="gxc-Wb-HDI" id="Zwy-ER-pCP"/>
+                                    <outlet property="titleLable" destination="53k-II-5P3" id="JCc-qM-tJf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetails" id="EfH-n0-XFM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="T7U-8h-Wf5" id="fYV-9N-iYG"/>
+                            <outlet property="delegate" destination="T7U-8h-Wf5" id="Z5i-xc-Koa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Dreams List" id="9eZ-3M-r36">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ebo-MP-73Y">
+                            <connections>
+                                <segue destination="I5u-B0-svs" kind="presentation" identifier="AddItem" id="lrt-1N-2wl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="z4a-kF-RzY" id="ihV-fC-9z5"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aP-gv-p31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="99"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VYZ-r3-O2V">
+            <objects>
+                <navigationController id="cQB-jp-RmV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3eI-9K-gOP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="T7U-8h-Wf5" kind="relationship" relationship="rootViewController" id="wrK-Ez-amt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M30-Qt-AEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1230" y="98"/>
+        </scene>
+        <!--Dream-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DreamViewController" customModule="Ghost_s_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the dream title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wtY-lO-5Vt">
+                                <rect key="frame" x="16" y="107" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CJZ-aF-OFu"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UOd-wQ-gNo" customClass="PlaceHolderTextView" customModule="Ghost_s_Dreams" customModuleProvider="target">
+                                <rect key="frame" x="16" y="180" width="343" height="180"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="JRz-69-MUU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Please enter description"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM4-ts-HQP">
+                                <rect key="frame" x="16" y="80" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-wp-NN9">
+                                <rect key="frame" x="16" y="153" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wtY-lO-5Vt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="D2u-XT-iAo"/>
+                            <constraint firstItem="UOd-wQ-gNo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DSH-36-DU7"/>
+                            <constraint firstItem="rDv-wp-NN9" firstAttribute="top" secondItem="wtY-lO-5Vt" secondAttribute="bottom" constant="16" id="P5o-9d-ej6"/>
+                            <constraint firstItem="UOd-wQ-gNo" firstAttribute="top" secondItem="rDv-wp-NN9" secondAttribute="bottom" constant="6" id="SJv-Pc-1Ci"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wtY-lO-5Vt" secondAttribute="trailing" constant="16" id="V39-yA-AJ2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hM4-ts-HQP" secondAttribute="trailing" constant="16" id="aMa-kJ-9ws"/>
+                            <constraint firstItem="hM4-ts-HQP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fZy-6M-kLy"/>
+                            <constraint firstItem="rDv-wp-NN9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gs6-cA-DkY"/>
+                            <constraint firstItem="wtY-lO-5Vt" firstAttribute="top" secondItem="hM4-ts-HQP" secondAttribute="bottom" constant="6" id="kmU-XB-aKB"/>
+                            <constraint firstItem="hM4-ts-HQP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="o69-ZI-c4c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UOd-wQ-gNo" secondAttribute="trailing" constant="16" id="uyT-LB-i8Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rDv-wp-NN9" secondAttribute="trailing" constant="16" id="yJQ-ON-Paa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dream" id="C1g-59-9sz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NWq-R6-1Ox">
+                            <connections>
+                                <action selector="cancelAction:" destination="BYZ-38-t0r" id="fbp-fq-wKw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2Wo-7J-ABf">
+                            <connections>
+                                <segue destination="VgO-0j-g3T" kind="unwind" unwindAction="unwindToDreamListWithSender:" id="cGx-rn-c7C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="UOd-wQ-gNo" id="pIL-Dk-9ME"/>
+                        <outlet property="descriptionTextViewHeightConstraint" destination="JRz-69-MUU" id="JXk-Fp-ufE"/>
+                        <outlet property="saveBarButton" destination="2Wo-7J-ABf" id="ENl-Zb-say"/>
+                        <outlet property="titleTextField" destination="wtY-lO-5Vt" id="haf-ak-ZzF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="VgO-0j-g3T" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2000.8" y="97.601199400299862"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s40-bk-nPf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I5u-B0-svs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rpr-Hd-EiL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Avf-3g-N7C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8tn-Cf-D34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183" y="510"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EfH-n0-XFM"/>
+    </inferredMetricsTieBreakers>
+</document>
