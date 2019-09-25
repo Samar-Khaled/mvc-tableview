@@ -5,3 +5,6 @@ Simple MVC app for TableView with the following features:
 - Search for a dream.
 - UITextView with placeholder.
 - UITextView with dynamic height while pressing on return key.
+
+
+N.B: it was an interview task
